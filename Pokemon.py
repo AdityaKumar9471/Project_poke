@@ -32,7 +32,7 @@ st.markdown(
 
 
 file=st.file_uploader('', type=['jpg', 'jpeg', 'png'])
-
+@st.cache_resource
 model=tf.keras.models.load_model("myMLmodel3.keras")
 
 class_names = ['Abra',
