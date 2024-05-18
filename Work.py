@@ -7,7 +7,7 @@ from PIL import ImageOps,Image
 
 
 
-
+@st.cache_data
 def classify(image,model,class_names):
 
     image_sized=ImageOps.fit(image, (128,128), Image.Resampling.LANCZOS)
