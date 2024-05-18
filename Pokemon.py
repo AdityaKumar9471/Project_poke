@@ -193,7 +193,7 @@ if file is not None:
     image=Image.open(file).convert("RGB")
     st.image(image, use_column_width=True)
 
-    classn, confidence_score = classify(image, model, class_names, pokemon_descriptions)
+    classn, confidence_score = classify(image, model, class_names)
     st.write("Image Classified!")
     st.write("## {}".format(classn))
     st.write("### Confidence_Score(%): {}".format(confidence_score))
