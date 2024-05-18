@@ -8,7 +8,7 @@ from PIL import ImageOps,Image
 
 
 @st.cache_data
-def classify(image,model,class_names):
+def classify(image,model,class_names,pokemon_description):
 
     image_sized=ImageOps.fit(image, (128,128), Image.Resampling.LANCZOS)
     image_array=np.asarray(image_sized)
@@ -20,9 +20,9 @@ def classify(image,model,class_names):
     index=np.argmax(prediction)
     classn=class_names[index]
     confidence_score= prediction[0][index]*100
-   # description=pokemon_description[index]
+    description=pokemon_description[index]
 
-    return classn,confidence_score
+    return classn,confidence_score,description
 
 
 
