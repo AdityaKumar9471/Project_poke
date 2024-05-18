@@ -17,5 +17,3 @@ def classify(image,model,class_names,pokemon_descriptions):
     description=pokemon_descriptions[index]
 
     return classn,confidence_score,description
-
-
