@@ -372,4 +372,4 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.image("pokemon-party.jpg", use_column_width=True)  # Replace with your image file
+st.image("pokemon-party.jpg", use_column_width=True)
