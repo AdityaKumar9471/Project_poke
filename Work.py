@@ -2,12 +2,6 @@ import base64
 import numpy as np
 import streamlit as st
 from PIL import ImageOps,Image
-
-
-
-
-
-
 def classify(image,model,class_names,pokemon_descriptions):
 
     image_sized=ImageOps.fit(image, (128,128), Image.Resampling.LANCZOS)
@@ -23,6 +17,5 @@ def classify(image,model,class_names,pokemon_descriptions):
     description=pokemon_descriptions[index]
 
     return classn,confidence_score,description
-
 
 
