@@ -336,8 +336,7 @@ pokemon_descriptions=[
     "Weezing: The evolved form of Koffing, a toxic gas Pokémon known for its dual exhaust pipes.",
     "Wigglytuff: The evolved form of Jigglypuff, a fairy-type Pokémon with a large, round body and a soothing voice.",
     "Zapdos: A legendary electric and flying-type Pokémon known as the 'Electric Pokémon' and one of the legendary birds of Kanto.",
-    "Zubat: A bat-like poison and flying-type Pokémon known for its echolocation abilities and nocturnal habits."
-]
+    "Zubat: A bat-like poison and flying-type Pokémon known for its echolocation abilities and nocturnal habits."]
 
 
 if file is not None:
@@ -374,4 +373,3 @@ st.markdown(
 )
 
 st.image("pokemon-party.jpg", use_column_width=True)  # Replace with your image file
-
