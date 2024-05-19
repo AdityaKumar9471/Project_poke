@@ -357,7 +357,7 @@ st.markdown(
 
     This is a deep learning model based on computer vision to classify uploaded images into 150 distinct categories. 
     Initially, images are resized to meet the model's input specifications. The model employs transfer learning, utilizing 
-    the ResNet101v2 architecture to perform image categorization. At the final stage, a Softmax layer computes the probabilities 
+    the MobileNetV2 architecture to perform image categorization. At the final stage, a Softmax layer computes the probabilities 
     of the image being one of the 150 Pokémon classes. 
 
     Feel free to experiment with various Pokémon images!
