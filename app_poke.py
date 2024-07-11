@@ -1,8 +1,9 @@
 import streamlit as st
 from PIL import Image
-from Work import classify
+#from Work import classify
 import base64
 import tensorflow as tf
+import numpy as np
 
 # Title and header
 st.markdown(
@@ -18,6 +19,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+st.image("Ash_Ketchum_World_Champion_Screenshot_4.0.jpg")
 st.markdown(
     """
     <div style="background-color: white; padding: 20px; border-radius: 10px;">
@@ -339,7 +342,23 @@ pokemon_descriptions=[
     "Zapdos: A legendary electric and flying-type Pokémon known as the 'Electric Pokémon' and one of the legendary birds of Kanto.",
     "Zubat: A bat-like poison and flying-type Pokémon known for its echolocation abilities and nocturnal habits."]
 
+def classify(image, model, class_names, pokemon_descriptions):
+    image = image.resize((128, 128))
+    image_array = np.array(image)
+    image_array = image_array / 255.0
+    image_array = np.expand_dims(image_array, axis=0)
 
+
+
+    predictions = model.predict(image_array)
+
+
+    max_index = np.argmax(predictions[0])
+    class_name = class_names[max_index]
+    confidence_score = round(predictions[0][max_index] * 100, 2)
+    description = pokemon_descriptions[max_index]
+
+    return class_name, confidence_score, description
 if file is not None:
     image=Image.open(file).convert("RGB")
     st.image(image, use_column_width=True)
